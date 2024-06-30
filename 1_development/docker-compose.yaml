@@ -1,0 +1,11 @@
+services:
+  view: # rename this to your project name
+    build: .
+    container_name: view # rename this to your project name
+    volumes:
+      - ./:/workdir
+    ports:
+      - 0.0.0.0:4200:4200 # to use host 0.0.0.0 to route the devops container 
+    user: ${CURRENT_UID} # to use the current user id and group id to run the container with it
+    restart: always
+    
